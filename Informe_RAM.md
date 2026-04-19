@@ -68,7 +68,38 @@ Con los símbolos generados, ejecuta:
 vol -f RAM.bin --symbol-dirs=./symbols linux.pslist.PsList
 ```
 
-Esto mostrará la lista de procesos activos en la memoria analizada (PID, PPID, nombre, etc.).
+
+---
+
+## 5. Hallazgos Relevantes en la Memoria RAM
+
+A continuación se presentan las principales evidencias encontradas durante el análisis de la memoria RAM, acompañadas de sus respectivas capturas y una breve descripción profesional de cada hallazgo:
+
+### 5.1 Conexiones SSH desde IP desconocida
+
+![Conexión SSH 1](assets/Hallazgo_1_RAM.png)
+![Conexión SSH 2](assets/Hallazgo_2_RAM.png)
+
+Ambas capturas muestran conexiones SSH entrantes desde una dirección IP no reconocida, lo que sugiere un posible acceso no autorizado al sistema. Es fundamental investigar la procedencia de esta IP y determinar si corresponde a una actividad legítima o maliciosa.
+
+### 5.2 Historial de comandos sospechoso
+
+![Historial de comandos](assets/Hallazgo_3_RAM.png)
+
+En esta evidencia se observa el historial de comandos ejecutados en la máquina. Se infiere que se realizaron modificaciones en el sitio web alojado, lo que podría indicar un intento de alteración o compromiso de la integridad del servicio.
+
+### 5.3 Uso de Yarascan en Apache y SSH
+
+![Yarascan SSH](assets/Hallazgo_4_RAM.png)
+![Yarascan Apache](assets/Hallazgo_5_RAM.png)
+
+Las siguientes capturas evidencian conexiones desde la misma IP utilizando la herramienta Yarascan sobre los procesos de Apache y SSH. Esto puede indicar una búsqueda activa de patrones maliciosos o la presencia de un atacante analizando servicios críticos del sistema.
+
+### 5.4 Detección de posible malware
+
+![Posible malware](assets/Hallazgo_6_RAM.png)
+
+La última captura corresponde a la detección de un archivo o proceso sospechoso, potencialmente asociado a malware presente en el equipo. Se recomienda realizar un análisis exhaustivo de este elemento para confirmar su naturaleza y tomar las medidas de remediación necesarias.
 
 ---
 
