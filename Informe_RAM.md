@@ -12,7 +12,7 @@ volatility -f RAM.bin banners.Banners
 
 Obtenemos el siguiente resultado:
 
-![Resultado de banners.Banners](assets/vol-banner.png)
+![Resultado de banners.Banners](assets/RAM/vol-banner.png)
 
 El resultado indica:
 - **Kernel:** 4.4.0-1061-aws
@@ -50,7 +50,7 @@ Para convertir el archivo `vmlinux` a un formato compatible con Volatility:
 	./dwarf2json linux --elf vmlinux-4.4.0-1061-aws > symbols.json
 	```
 
-	![Ejecución de dwarf2json](assets/dwarf2json.png)
+	![Ejecución de dwarf2json](assets/RAM/dwarf2json.png)
 
 3. Organiza los símbolos:
 	```bash
@@ -77,27 +77,27 @@ A continuación se presentan las principales evidencias encontradas durante el a
 
 ### 5.1 Conexiones SSH desde IP desconocida
 
-![Conexión SSH 1](assets/Hallazgo_1_RAM.png)
-![Conexión SSH 2](assets/Hallazgo_2_RAM.png)
+![Conexión SSH 1](assets/RAM/Hallazgo_1_RAM.png)
+![Conexión SSH 2](assets/RAM/Hallazgo_2_RAM.png)
 
 Ambas capturas muestran conexiones SSH entrantes desde una dirección IP no reconocida, lo que sugiere un posible acceso no autorizado al sistema. Es fundamental investigar la procedencia de esta IP y determinar si corresponde a una actividad legítima o maliciosa.
 
 ### 5.2 Historial de comandos sospechoso
 
-![Historial de comandos](assets/Hallazgo_3_RAM.png)
+![Historial de comandos](assets/RAM/Hallazgo_3_RAM.png)
 
 En esta evidencia se observa el historial de comandos ejecutados en la máquina. Se infiere que se realizaron modificaciones en el sitio web alojado, lo que podría indicar un intento de alteración o compromiso de la integridad del servicio.
 
 ### 5.3 Uso de Yarascan en Apache y SSH
 
-![Yarascan SSH](assets/Hallazgo_4_RAM.png)
-![Yarascan Apache](assets/Hallazgo_5_RAM.png)
+![Yarascan SSH](assets/RAM/Hallazgo_4_RAM.png)
+![Yarascan Apache](assets/RAM/Hallazgo_5_RAM.png)
 
 Las siguientes capturas evidencian conexiones desde la misma IP utilizando la herramienta Yarascan sobre los procesos de Apache y SSH. Esto puede indicar una búsqueda activa de patrones maliciosos o la presencia de un atacante analizando servicios críticos del sistema.
 
 ### 5.4 Detección de posible malware
 
-![Posible malware](assets/Hallazgo_6_RAM.png)
+![Posible malware](assets/RAM/Hallazgo_6_RAM.png)
 
 La última captura corresponde a la detección de un archivo o proceso sospechoso, potencialmente asociado a malware presente en el equipo. Se recomienda realizar un análisis exhaustivo de este elemento para confirmar su naturaleza y tomar las medidas de remediación necesarias.
 
