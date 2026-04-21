@@ -1,4 +1,4 @@
-# Informe de Análisis de Memoria RAM
+# MEMORIA DE TRABAJO: ANÁLISIS DE MEMORIA RAM
 
 ---
 
@@ -100,7 +100,3 @@ Las siguientes capturas evidencian conexiones desde la misma IP utilizando la he
 ![Posible malware](assets/RAM/Hallazgo_6_RAM.png)
 
 La última captura corresponde a la detección de un archivo o proceso sospechoso, potencialmente asociado a malware presente en el equipo. Se recomienda realizar un análisis exhaustivo de este elemento para confirmar su naturaleza y tomar las medidas de remediación necesarias.
-
----
-
-
